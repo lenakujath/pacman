@@ -44,10 +44,19 @@ const layout = [
 function createBoard() {
     for (let i = 0; i < layout.length; i++) {
         //create a square
-        const square = document.createElement('div')
+        const square = document.createElement('div');
         //put the square in grid
-        grid.appendChild(square)
-        squares.push(square)
+        grid.appendChild(square);
+        squares.push(square);
+
+         
+        if (layout[i] === 0) {
+            squares[i].classList.add('pac-dot')
+        } else if (layout[i] === 1) {
+            squares[i].classList.add('wall')
+        } else if (layout[i] === 3) {
+            squares[i].classList.add('power-pellet')
+        }
     }
 }
 
